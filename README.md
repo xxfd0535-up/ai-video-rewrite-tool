@@ -38,7 +38,7 @@
    # 下载并启动Ollama
    # 下载地址: https://ollama.com/
    # 启动后拉取模型
-   ollama pull deepseek-r1:8b
+   ollama pull deepseek-r1:8b等
    ```
 
 4. **运行程序**
@@ -173,7 +173,7 @@
 
 本项目采用MIT许可证 - 详见 [LICENSE](LICENSE) 文件
 
-## 💡 技术支持
+## 💡 技术支持vx：xinhuaitianxia_daop
 
 如遇到问题，请检查：
 1. 本README文档的故障排除部分
