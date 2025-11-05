@@ -1,0 +1,88 @@
+{
+  "app": {
+    "name": "AI视频文案改写工具",
+    "version": "1.0.0",
+    "author": "AI Assistant",
+    "window_title": "🎬 AI视频文案改写工具 v1.0",
+    "window_size": { "width": 1200, "height": 800 }
+  },
+  "whisper": {
+    "model": "medium",
+    "language": "zh",
+    "device": "cuda",
+    "temperature": 0.2,
+    "compression_ratio_threshold": 2.4,
+    "condition_on_previous_text": false,
+    "verbose": false,
+    "timeout": 600,
+    "max_retries": 2,
+    "retry_delay": 3
+  },
+  "ollama": {
+    "enabled": true,
+    "url": "http://127.0.0.1:11434/api/generate",
+    "model": "qwen:7b",
+    "timeout": 600,
+    "max_retries": 3,
+    "retry_delay": 2,
+    "stream": false,
+    "options": {
+      "num_ctx": 1024,
+      "num_predict": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 40
+    },
+    "system_prompt": "你是一位专业的短视频文案创作者，请阅读原文并帮我改写文案。要求如下：\n\n1、第一段开头的文案尽量不要动\n2、使用更生动的口语化表达，增加情感共鸣\n3、加入个人思考或感悟，让观众产生代入感\n4、优化句式结构，让文案更有节奏感和画面感\n5、控制字数与原文字数相近（±10%）\n6、修改程度40%以上\n7、避免生硬的过渡词，保持自然流畅\n\n记住：要像朋友聊天一样自然地讲述故事，不要太书面化，只输出改写后的纯文本文案，不要做额外的解释。"
+  },
+  "audio": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "temp_dir": "temp",
+    "quality": "high"
+  },
+  "video": {
+    "supported_formats": [".mp4", ".mov", ".mkv", ".avi", ".flv", ".wmv", ".webm", ".ts"],
+    "max_file_size_mb": 500,
+    "max_duration_minutes": 60
+  },
+  "ui": {
+    "font_family": "Microsoft YaHei",
+    "font_size": 10,
+    "theme": "light",
+    "window_icon": "config/icon.ico",
+    "progress_animation": true,
+    "drag_drop_enabled": true,
+    "show_device_info": true,
+    "output_dir": "output",
+    "auto_save_output": true
+  },
+  "system": {
+    "log_level": "INFO",
+    "log_dir": "logs",
+    "temp_dir": "temp",
+    "max_log_files": 10,
+    "auto_cleanup": true,
+    "cleanup_days": 7
+  },
+  "advanced": {
+    "gpu_memory_threshold": 2048,
+    "cpu_threads": 4,
+    "batch_processing": true,
+    "auto_save_results": true,
+    "results_dir": "results",
+    "backup_enabled": true,
+    "backup_interval_hours": 24
+  },
+  "_comments": {
+    "app": "应用程序基本配置",
+    "whisper": "Whisper语音识别配置",
+    "ollama": "Ollama API配置",
+    "audio": "音频处理配置",
+    "video": "视频处理配置",
+    "ui": "用户界面配置",
+    "system": "系统运行配置",
+    "advanced": "高级功能配置"
+  }
+}

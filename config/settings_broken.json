@@ -1,0 +1,90 @@
+{
+  "app": {
+    "name": "AI视频文案改写工具",
+    "version": "1.0.0",
+    "author": "AI Assistant",
+    "window_title": "🎬 AI视频文案改写工具 v1.0",
+    "window_size": { "width": 1200, "height": 800 }
+  },
+  "whisper": {
+    "model": "small",
+    "language": "zh",
+    "device": "cpu",
+    "temperature": 0.0,
+    "compression_ratio_threshold": 2.4,
+    "condition_on_previous_text": false,
+    "verbose": false,
+    "timeout": 300
+  },
+  "ollama": {
+    "enabled": true,
+    "url": "http://127.0.0.1:11434/api/generate",
+    "model": "deepseek-r1:8b",
+    "timeout": 600,
+    "max_retries": 3,
+    "retry_delay": 2,
+    "stream": false,
+    "options": {
+      "num_ctx": 1024,
+      "num_predict": 512,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 40
+    },
+    "system_prompt": "你是一位专业的短视频文案创作者，现在需要你帮我二创一下文案，有以下几点要求:
+1、第一段开头的文案尽量不要动;
+2、尽量与原文案保持字数相同;
+3、修改程度40%以上
+4、在收尾前，加入一层思考，让观众产生代入感
+5、整体风格参考原文更口语化的表达，不要太书面化，要让整个故事听起来有画面感
+6、删掉文中破折号，保留自然的句式。"
+  },
+  "audio": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "temp_dir": "temp",
+    "quality": "high"
+  },
+  "video": {
+    "supported_formats": [".mp4", ".mov", ".mkv", ".avi", ".flv", ".wmv", ".webm", ".ts"],
+    "max_file_size_mb": 500,
+    "max_duration_minutes": 60
+  },
+  "ui": {
+    "font_family": "Microsoft YaHei",
+    "font_size": 10,
+    "theme": "light",
+    "window_icon": "config/icon.ico",
+    "progress_animation": true,
+    "drag_drop_enabled": true,
+    "show_device_info": true
+  },
+  "system": {
+    "log_level": "INFO",
+    "log_dir": "logs",
+    "temp_dir": "temp",
+    "max_log_files": 10,
+    "auto_cleanup": true,
+    "cleanup_days": 7
+  },
+  "advanced": {
+    "gpu_memory_threshold": 2048,
+    "cpu_threads": 4,
+    "batch_processing": true,
+    "auto_save_results": true,
+    "results_dir": "results",
+    "backup_enabled": true,
+    "backup_interval_hours": 24
+  },
+  "_comments": {
+    "app": "应用程序基本配置",
+    "whisper": "Whisper语音识别配置",
+    "ollama": "Ollama API配置",
+    "audio": "音频处理配置",
+    "video": "视频处理配置",
+    "ui": "用户界面配置",
+    "system": "系统运行配置",
+    "advanced": "高级功能配置"
+  }
+}

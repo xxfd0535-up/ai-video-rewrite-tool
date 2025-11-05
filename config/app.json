@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "description": "",
+  "version": "1.0.0",
+  "name_zh": "视频文案AI爆款改写工具",
+  "author": "AI Development Team",
+  "website": "",
+  "debug": false,
+  "auto_update": true,
+  "telemetry_enabled": false
+}

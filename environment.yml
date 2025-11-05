@@ -1,0 +1,46 @@
+# 视频文案AI爆款改写工具环境配置
+# 使用 conda 环境安装
+
+name: video_rewrite_env_py312
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.12
+  - pip=23.0+
+
+  # GUI界面
+  - pyqt=5.15.10
+
+  # 视频和音频处理
+  - ffmpeg
+  - opencv=4.10.0
+
+  # 系统监控
+  - psutil=6.0.0
+
+  # 网络请求
+  - requests=2.32.3
+
+  # 字体支持
+  - fonttools=4.53.1
+  - pillow=10.4.0
+
+  # 通过 pip 安装的包
+  - pip:
+    - whisper==1.1.10
+    - pydub==0.25.1
+    - soundfile==0.12.1
+    - colorlog==6.8.2
+    - dataclasses-json==0.6.4
+
+    # PyTorch (CUDA支持)
+    - pytorch==2.4.1
+    - torchvision==0.19.1
+    - torchaudio==2.4.1
+    --extra-index-url https://download.pytorch.org/whl/cu124
+    - pynvml  # 可选：GPU监控
+
+    # 其他依赖
+    - yt-dlp  # 可选：支持YouTube视频下载

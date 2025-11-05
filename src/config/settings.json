@@ -1,0 +1,77 @@
+{
+  "app": {
+    "name": "AI视频文案改写工具",
+    "version": "1.0.0",
+    "author": "AI Assistant",
+    "window_title": "🎬 AI视频文案改写工具 v1.0",
+    "window_size": { "width": 1200, "height": 800 }
+  },
+  "whisper": {
+    "model": "medium",
+    "language": "zh",
+    "device": "auto",
+    "temperature": 0.0,
+    "compression_ratio_threshold": 2.4,
+    "condition_on_previous_text": false,
+    "verbose": false,
+    "timeout": 300
+  },
+  "ollama": {
+    "enabled": true,
+    "url": "http://127.0.0.1:11434/api/generate",
+    "model": "deepseek-r1:8b",
+    "timeout": 600,
+    "max_retries": 3,
+    "retry_delay": 2,
+    "stream": false,
+    "system_prompt": "你是一位创作过1000多个爆款短视频专家，请你从以下几个角度拆解。\n1.脚本结构：从开篇、中间发展、结尾的逻辑层次进行详细剖析；\n2.表述风格：通过具体语言风格的分析，提炼出让文案更贴近目标受众的写作技巧；\n3.爆款逻辑：解析文案如何通过痛点刺激、数据支撑等逻辑驱动用户行动；\n4.开头三秒：聚焦文案开头,分析如何迅速抓住读者的注意力；\n5.钩子设计:识别出文章中多处钩子设计,不断吸引用户继续阅读；\n6.爆款表达方法论：总结出文案成功的关键要素，并提炼出可操作的写作建议。\n拆解完文案以后,请你结合下面的要求,帮我对该文案进行仿写：\n1.文案的开头必须与原文一致，不得更改；\n2.避免使用过于常见的广告语或套路化的表达,确保内容的新颖性和独特性；\n3.文案必须保证50%的原创度,但整体内容的意思禁止改变。\n记住，最后只输出仿写后的文案，其他内容一概不要输出。"
+  },
+  "audio": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "temp_dir": "temp",
+    "quality": "high"
+  },
+  "video": {
+    "supported_formats": [".mp4", ".mov", ".mkv", ".avi", ".flv", ".wmv", ".webm", ".ts"],
+    "max_file_size_mb": 500,
+    "max_duration_minutes": 60
+  },
+  "ui": {
+    "font_family": "Microsoft YaHei",
+    "font_size": 10,
+    "theme": "light",
+    "window_icon": "config/icon.ico",
+    "progress_animation": true,
+    "drag_drop_enabled": true,
+    "show_device_info": true
+  },
+  "system": {
+    "log_level": "INFO",
+    "log_dir": "logs",
+    "temp_dir": "temp",
+    "max_log_files": 10,
+    "auto_cleanup": true,
+    "cleanup_days": 7
+  },
+  "advanced": {
+    "gpu_memory_threshold": 2048,
+    "cpu_threads": 4,
+    "batch_processing": true,
+    "auto_save_results": true,
+    "results_dir": "results",
+    "backup_enabled": true,
+    "backup_interval_hours": 24
+  },
+  "_comments": {
+    "app": "应用程序基本配置",
+    "whisper": "Whisper语音识别配置",
+    "ollama": "Ollama API配置",
+    "audio": "音频处理配置",
+    "video": "视频处理配置",
+    "ui": "用户界面配置",
+    "system": "系统运行配置",
+    "advanced": "高级功能配置"
+  }
+}

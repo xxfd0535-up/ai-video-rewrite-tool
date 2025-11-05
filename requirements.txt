@@ -1,0 +1,33 @@
+# 视频文案AI爆款改写工具依赖
+# Python版本要求: >= 3.12
+
+# GUI界面依赖
+PyQt5==5.15.10
+
+# 视频和音频处理
+opencv-python==4.10.0.84
+pydub==0.25.1
+soundfile==0.12.1
+
+# 语音识别
+whisper==1.1.10
+
+# AI模型支持
+pytorch==2.4.1
+pytorch-cuda=12.4  # CUDA支持
+
+# 网络请求
+requests==2.32.3
+
+# 系统监控
+psutil==6.0.0
+
+# 日志处理
+colorlog==6.8.2
+
+# 确保中文显示正常
+fonttools==4.53.1
+pillow==10.4.0
+
+# 新增：数据类支持（Python 3.12已内置，但为了兼容性）
+dataclasses-json==0.6.4
